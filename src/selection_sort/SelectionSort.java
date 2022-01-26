@@ -1,10 +1,10 @@
-package intert_sort;
+package selection_sort;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class InsertSort {
+public class SelectionSort {
     private static Integer findMinElement(List<Integer> list){
         int minElement = list.get(0);
         int minElementIndex = 0;
