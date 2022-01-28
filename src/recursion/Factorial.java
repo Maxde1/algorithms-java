@@ -21,9 +21,13 @@ public class Factorial {
         arr.remove(0);
         return 1+sizeOfList(arr);
     }
-//    public static int max(ArrayList<Integer> arr){
-//        if (arr.isEmpty()) return 0;
-//    }
+    public static int max(ArrayList<Integer> arr){
+        if (arr.size() == 1) return arr.get(0);
+        if (arr.get(0) >= arr.get(1)) arr.remove(1);
+        else if (arr.get(0) <= arr.get(1)) arr.remove(0);
+        return max(arr);
+    }
+
 
     //binary search use recursive instead loop
     public static int recursiveBinarySearch(int[] arr, int min, int max, int searchElement) throws Exception {
@@ -34,14 +38,20 @@ public class Factorial {
         else return recursiveBinarySearch(arr, min, midde-1, searchElement);
     }
 
-    public static void main(String[] args) {
-        //System.out.println(findFactorial(5));
-        //System.out.println(sum(new ArrayList<>(Arrays.asList(1, 2,3))));
-        int[] arr = {1, 2, 3, 4, 5};
-        try {
-            System.out.println(recursiveBinarySearch(arr, 0, arr.length-1, 1));
-        }catch (Exception e){
-            System.out.println(e.getMessage());
-        }
-    }
+//    public static void main(String[] args) {
+//        System.out.println(findFactorial(5));
+//        System.out.println(sum(new ArrayList<>(Arrays.asList(1, 2,3))));
+//        int[] arr = {1, 2, 3, 4, 5};
+//        try {
+//            System.out.println(recursiveBinarySearch(arr, 0, arr.length-1, 3));
+//        }catch (Exception e){
+//            System.out.println(e.getMessage());
+//        }
+//
+//    }
+public static void main(String[] args) {
+    String s1 = "One";
+    String s2 = "One";
+    System.out.println(s1==s2);
+}
 }
